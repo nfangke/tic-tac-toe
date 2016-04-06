@@ -25,6 +25,7 @@ h2 {
   font-weight: 100;
   font-size: 50px;
   text-align: center;
+  display:none;
 }
 
 .row {
@@ -39,54 +40,79 @@ h2 {
   height: 250px;
 }
 
-.row1 .col1 {
+#a1 {
   border-right: 2.5px solid pink;
   border-bottom: 2.5px solid pink;
-
+  box-shadow: 1px 2px 120px 1px pink;
+  border-top-left-radius: 10px;
 }
 
-.row1 .col2 {
+#b1 {
   border-bottom: 2.5px solid lightblue;
   border-right: 2.5px solid lightblue;
   border-left: 2.5px solid lightblue;
-
+    box-shadow: 1px 2px 120px 1px lightblue;
 }
 
-.row1 .col3 {
-  border-bottom: 2.5px solid lightgreen;
-  border-left: 2.5px solid lightgreen;
-
+#c1{
+  border-bottom: 2.5px solid #B5FFCF;
+  border-left: 2.5px solid #B5FFCF;
+  box-shadow: 1px 2px 120px 1px #B5FFCF;
+  border-top-right-radius: 10px;
 }
 
-.row2 .col1 {
+#a2 {
   border-bottom: 2.5px solid #E6CAEB;
   border-top: 2.5px solid #E6CAEB;
   border-right: 2.5px solid #E6CAEB;
-
+  box-shadow: 1px 2px 120px 1px #E6CAEB;
 }
 
-.row2 .col2 {
+#b2 {
   border: 2.5px solid #FFDDAD;
+  box-shadow: 1px 2px 120px 1px #FFDDAD;
 }
 
-.row2 .col3 {
+#c2 {
   border-bottom: 2.5px solid #ABFFF9;
   border-top: 2.5px solid #ABFFF9;
   border-left: 2.5px solid #ABFFF9;
+  box-shadow: 1px 2px 100px 1px #ABFFF9;
 }
 
-.row3 .col1 {
-  border-top: 2.5px solid lightgreen;
-  border-right: 2.5px solid lightgreen;
+#a3{
+  border-top: 2.5px solid #B5FFCF;
+  border-right: 2.5px solid #B5FFCF;
+  box-shadow: 1px 2px 120px 1px #B5FFCF;
+  border-bottom-left-radius: 10px;
 }
 
-.row3 .col2 {
+#b3 {
   border-right: 2.5px solid #FFCCF7;
   border-top: 2.5px solid #FFCCF7;
   border-left: 2.5px solid #FFCCF7;
+  box-shadow: 1px 2px 120px 1px #FFCCF7;
 }
 
-.row3 .col3 {
-  border-top: 2.5px solid #FFEF85;
-  border-left: 2.5px solid #FFEF85;
+#c3{
+  border-top: 2.5px solid #C4E2FF;
+  border-left: 2.5px solid #C4E2FF;
+  box-shadow: 1px 2px 120px 1px #C4E2FF;
+  border-bottom-right-radius: 10px;
+}
+
+.x {
+  background-image: url('../images/x.png');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+
+}
+
+.o {
+  background-image: url('../images/o.png');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+
 }
