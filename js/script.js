@@ -22,8 +22,6 @@
 // function Board ()
 // // The game is won if all spaces in a row are filled and the same OR all spaces in a column are filled and the same OR a1 = b2 = c3 OR c1 = b2 = a3.
 
-
-
 //UI Logic
 
 // function Game (turns) {
@@ -52,35 +50,41 @@ var board = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
 //   if (((a1 !== 0) && (a1 === b1) && (b1 === c1)) || ((a2 !== 0) && (a2 === b2) && (b2 === c2)) || ((a3 !== 0) && (a3 === b3) && (b3 === c3))) {
 //   alert("Win!");
 // }
+function winCheck() {
+  if (a1.value !== 0) {
+    alert("Win!");
+  } else {
+    alert("No winner yet");
+  }
+};
 
+// function winCheck() {
+//   if (((a1.value !== 0) && (a1.value === b1.value) && (b1.value === c1.value)) || ((a2.value !== 0) && (a2.value === b2.value) && (b2.value === c2.value)) || ((a3.value !== 0) &&  (a3.value === b3.value) && (b3.value === c3.value))) {
+//     alert("Win!");
+//   } else {
+//     alert("No winner yet");
+//   }
+// };
 
 $(document).ready(function() {
   $("h1").hide().fadeIn(1900);
 
+  var turn = 0;
 
+  $(".plot").click(function() {
+    turn++;
+    console.log(turn);
+    if (turn % 2 === 0) {
+      $(this).addClass("o");
 
-var turn = 0;
-
-    $(".plot").click(function() {
-      turn++;
-      console.log(turn);
-      if (turn % 2 === 0) {
-        $(this).addClass("o");
-
-        var id = $(this).attr('id');
-        for (i = 0; i <= board.length; i++) {
-          if (board[i].coordinate === id) {
-            return board[i].value += 1;
-            console.log(board[i].coordinate);
-
-
+      var id = $(this).attr('id');
+      for (i = 0; i <= board.length; i++) {
+        if (board[i].coordinate === id) {
+          return board[i].value += 1;
+          console.log(board[i].coordinate);
       }
-
     }
-
   }
-
-  //  else if (turn % 2 === 0) {
        else {
         $(this).addClass("x");
 
@@ -90,27 +94,14 @@ var turn = 0;
             return board[i].value += 2;
             alert(board[i]);
           }
-
         }
-
-        }
-
-
-
-        // winCheck();
-
-
+      }
+      winCheck();
   });
 });
 
 
-
 // The game is won if all spaces in a row are filled and the same OR all spaces in a column are filled and the same OR a1 = b2 = c3 OR c1 = b2 = a3.
 //
-//   function Game {
-//     if (((a1 !== 0) && (a1 === b1) && (b1 === c1)) || ((a2 !== 0) && (a2 === b2) && (b2 === c2)) || ((a3 !== 0) && (a3 === b3) && (b3 === c3))) {
-//       alert("Win!");
-//     }
-//
-//   });
+
 //
