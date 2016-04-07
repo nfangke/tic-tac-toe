@@ -47,31 +47,61 @@ var a3 = new Plot ("a3", 0);
 var b3 = new Plot ("b3", 0);
 var c3 = new Plot ("c3", 0);
 
-function winCheck() {
-  if (((a1 !== 0) && (a1 === b1) && (b1 === c1)) || ((a2 !== 0) && (a2 === b2) && (b2 === c2)) || ((a3 !== 0) && (a3 === b3) && (b3 === c3))) {
-  alert("Win!");
-}
+var board = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
+// function winCheck() {
+//   if (((a1 !== 0) && (a1 === b1) && (b1 === c1)) || ((a2 !== 0) && (a2 === b2) && (b2 === c2)) || ((a3 !== 0) && (a3 === b3) && (b3 === c3))) {
+//   alert("Win!");
+// }
 
 
 $(document).ready(function() {
   $("h1").hide().fadeIn(1900);
 
-  var turn = 1;
+
+
+var turn = 0;
 
     $(".plot").click(function() {
-      debugger;
+      turn++;
+      console.log(turn);
+      if (turn % 2 === 0) {
+        $(this).addClass("o");
 
-        if (turn % 2 === 0) {
-          $(this).addClass("x");
-          $(this).value += 1;
-        } else {
-          $(this).addClass("o");
+        var id = $(this).attr('id');
+        for (i = 0; i <= board.length; i++) {
+          if (board[i].coordinate === id) {
+            return board[i].value += 1;
+            console.log(board[i].coordinate);
+
+
+      }
+
+    }
+
+  }
+
+  //  else if (turn % 2 === 0) {
+       else {
+        $(this).addClass("x");
+
+        var id = $(this).attr('id');
+        for (i = 0; i <= board.length; i++) {
+          if (board[i].coordinate === id) {
+            return board[i].value += 2;
+            alert(board[i]);
+          }
+
         }
-        turn++;
 
-        winCheck();
-      });
+        }
+
+
+
+        // winCheck();
+
+
   });
+});
 
 
 
@@ -84,4 +114,3 @@ $(document).ready(function() {
 //
 //   });
 //
-// });
